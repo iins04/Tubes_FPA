@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="588.0" prefWidth="740.0" style="-fx-background-color: #B4DCC6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StatistikController">
+   <children>
+      <AnchorPane prefHeight="67.0" prefWidth="962.0" style="-fx-background-color: #6C9980;">
+         <children>
+            <Button layoutX="22.0" layoutY="32.0" mnemonicParsing="false" onAction="#hbKembaliAction" style="-fx-background-color: #72C597;" text="Kembali">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Text fill="#206129" layoutX="411.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Statistik" textAlignment="CENTER" wrappingWidth="140.13671875">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tvHasil" layoutX="56.0" layoutY="109.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="tcKecamatan" prefWidth="101.0" text="Kecamatan" />
+          <TableColumn fx:id="tcKriteria" prefWidth="98.0" text="Kriteria" />
+        </columns>
+      </TableView>
+      <Label layoutX="56.0" layoutY="85.0" prefHeight="17.0" prefWidth="70.0" text="Riwayat: " />
+      <BarChart fx:id="bcKecamatan" layoutX="324.0" layoutY="109.0" prefHeight="200.0" prefWidth="638.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Label layoutX="353.0" layoutY="85.0" prefHeight="17.0" prefWidth="70.0" text="Kecamatan:" />
+      <Label layoutX="360.0" layoutY="324.0" prefHeight="17.0" prefWidth="70.0" text="Kriteria:" />
+      <ChoiceBox fx:id="chbKecamatan" layoutX="56.0" layoutY="332.0" prefWidth="150.0" />
+      <RadioButton fx:id="rbKebun" layoutX="56.0" layoutY="375.0" mnemonicParsing="false" text="Kebun">
+         <toggleGroup>
+            <ToggleGroup fx:id="kriteria1" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rbSawah" layoutX="56.0" layoutY="406.0" mnemonicParsing="false" text="Sawah" toggleGroup="$kriteria1" />
+      <Button layoutX="52.0" layoutY="450.0" mnemonicParsing="false" onAction="#hbMasukkanAction" style="-fx-background-color: #72C597;" text="Masukkan">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="144.0" layoutY="450.0" mnemonicParsing="false" onAction="#hbHapusAction" style="-fx-background-color: #72C597;" text="Hapus">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="217.0" layoutY="450.0" mnemonicParsing="false" onAction="#hbResumeAction" style="-fx-background-color: #72C597;" text="Resume">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="label" layoutX="52.0" layoutY="508.0" prefHeight="38.0" prefWidth="192.0" />
+      <BarChart fx:id="bcKriteria" layoutX="324.0" layoutY="345.0" prefHeight="200.0" prefWidth="638.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>
